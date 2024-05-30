@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0dr3kyhi66ld"]
+
+[ext_resource type="Texture2D" uid="uid://cr7vflongxvml" path="res://35C6303A-0B7B-4A6C-A4A2-2E3597303374.PNG" id="1_358vo"]
+[ext_resource type="Script" path="res://lice.gd" id="1_lg1rv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hmg5q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_358vo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p87qh"]
+radius = 312.0
+height = 1164.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxnwj"]
+size = Vector2(1138, 312)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0j63"]
+radius = 150.0
+height = 632.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f46iy"]
+radius = 144.858
+height = 524.0
+
+[node name="lice" type="Area2D"]
+position = Vector2(276, 432)
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_lg1rv")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hmg5q")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-80, 38)
+rotation = -0.0363086
+shape = SubResource("CapsuleShape2D_p87qh")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(3, 444)
+shape = SubResource("RectangleShape2D_kxnwj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-298, 272)
+rotation = 0.791305
+shape = SubResource("CapsuleShape2D_f0j63")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(312, 316)
+rotation = -1.06364
+shape = SubResource("CapsuleShape2D_f46iy")
